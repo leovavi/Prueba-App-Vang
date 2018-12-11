@@ -38,18 +38,17 @@ export default class TaskList extends React.Component {
                     value = {todo}
                     clearButtonMode="always"
                     onChangeText = {this.handleChangeText}
-                    style = {{flex: 4}}
                     />
                     <Button
                         title = "Add"
                         color = "blue"
-                        style = {{flex: 1}}
                         onPress = {this.handleOnPress}
+                        style = {{width: 50}}
                     />
                 </View>
                 {
                     this.state.tasks.map(task => (
-                        <Text>{task}</Text>
+                        <Text style = {styles.detailsContainer}>{task}</Text>
                     ))
                 }
             </View>
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
       },
       row: {
           flexDirection: "row",
-          width: 150
+          width: 350
       },
       textStyle: {
           textAlign: "center",
@@ -79,28 +78,15 @@ const styles = StyleSheet.create({
           fontSize: 18
       },
       textInput: {
-          backgroundColor: "#657",
+          borderColor: "#667",
           color: "black",
-          height: 40,
           width: 300,
-          marginTop: 20,
-          marginHorizontal: 20,
-          paddingHorizontal: 10,
-          alignSelf: "center"
-      },
-      imageContainer: {
-          flex: 1,
-      },
-      image: {
-          flex: 1,
-          width: null,
-          height: null,
-          resizeMode: 'cover'
+          borderWidth: 1,
+          paddingHorizontal: 10
       },
       detailsContainer: {
-          flex: 1,
           justifyContent: 'center',
-          backgroundColor: 'rgba(0, 0, 0, 0.2)',
-          paddingHorizontal: 20
+          paddingHorizontal: 20,
+          fontSize: 20
       }
   });
